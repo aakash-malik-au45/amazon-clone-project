@@ -1,10 +1,11 @@
 const router = require("express").Router();
-const { User, validate } = require("../models/user");
+const { User, validate, signUP } = require("../models/user");
 const bcrypt = require("bcrypt");
 const admin = require("../middleware/admin");
 const auth = require("../middleware/auth");
 const validateObjectId = require("../middleware/validObjectId");
 
+router.get("./",signUP)
 
 // create user
 router.post("/", async (req, res) => {

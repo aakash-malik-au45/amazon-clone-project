@@ -14,6 +14,7 @@ connection();
 app.use(cors());
 app.use(express.json());
 
+app.use("/public/index", express.static(__dirname + '/public/index.html'));
 app.use("/api/users/", userRoutes);
 app.use("/api/login/", authRoutes);
 app.use("/api/songs/", songRoutes);
